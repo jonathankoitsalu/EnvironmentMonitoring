@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content-body">
+        <h1>Gecko temperature (celsius): <%=currentTemp%></h1>
+        <h1>Outside temperature(celsius): <%=currentTempOutside%></h1>
+        <canvas id="myChart"data="<%=jsondude%>"></canvas>
+
+    </div> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        //console.log(jsondude)
+        let string = document.getElementById('myChart').getAttribute('data')
+        let json = JSON.parse(string)
+        console.log(json)
+        const label = []
+        const temperature = []
+        const humidity = []
+        const temperatureOutside = []
+        const humidityOutside = []
+        json.forEach(element => {
+            label.push(element.time)
+            temperature.push(element.temperature)
+            humidity.push(element.humidity)
+            temperatureOutside.push(element.temperatureOutside)
+            humidityOutside.push(element.humidityOutside)
+        });
+        const labels = label
+        const datasets = {
+        labels: labels,
+        datasets: [{
+            label: 'temperature',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: temperature,
+        },
+        {
+            label: 'humidity',
+            backgroundColor: 'rgb(16, 60, 238)',
+            borderColor: 'rgb(16, 60, 238)',
+            data: humidity,
+        },
+        {
+            label: 'temperatureOutside',
+            backgroundColor: 'rgb(252, 236, 8)',
+            borderColor: 'rgb(252, 236, 8)',
+            data: temperatureOutside,
+        },
+        {
+            label: 'humidityOutside',
+            backgroundColor: 'rgb(252, 130, 8)',
+            borderColor: 'rgb(252, 130, 8)',
+            data: humidityOutside,
+        },
+    ]
+        };
+        const config = {
+        type: 'line',
+        data: datasets,
+        options: {}
+        };
+        const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+        );
+    </script>
+</body>
+</html>

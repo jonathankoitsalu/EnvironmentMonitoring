@@ -1,6 +1,8 @@
 # Environment Monitoring 
 
+
 [TOC]
+
 
 ## 1. About
 
@@ -21,6 +23,7 @@ Monitor the temperature and humidity of a terrarium to secure a good environment
 
 ![](https://i.imgur.com/Nz5yqnx.png)
 
+**Website:** https://garythegecko-4i4wnj6vka-lz.a.run.app/all
 
 The choice of working with google cloud is academical and has allowed me to get better insight in the platform.
 
@@ -72,7 +75,7 @@ e-mail: jonathan.koitsalu@gmail.com
 
 ## 6. Thanks
 
-to Daniel Johansson ([CodeByMini](https://github.com/CodeByMini))
+to Daniel Johansson ([CodeByMini](https://github.com/CodeByMini)) for helping me with node.js/chart.js.
 
 [^1]: https://cloud.google.com/run
 

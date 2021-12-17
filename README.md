@@ -1,5 +1,6 @@
 # Environment Monitoring 
 
+# Table of contents
 
 [TOC]
 
@@ -70,7 +71,9 @@ Containers have become a standard to package and deploy code and its dependencie
 ## 5. Contact
 
 Author: Jonathan Koitsalu
+
 e-mail: jonathan.koitsalu@gmail.com
+
 [linked-in](https://www.linkedin.com/in/jonathan-koitsalu-5885b3160/)
 
 ## 6. Thanks

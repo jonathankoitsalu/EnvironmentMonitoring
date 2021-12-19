@@ -23,10 +23,23 @@ def pubsub_fire(event, context):
 
     # telegram bot
 
+    bot_key = "Bot key"
+
+    chat_id = "chat ID"
+
+    message1 = "Too+hot"
+
+    message2 = "Too+cold"
+ 
+    bot_url1 = "https://api.telegram.org/" + bot_key + "sendMessage?chat_id=" + chat_id +"&text=" + message1
+
+    bot_url2 = "https://api.telegram.org/" + bot_key + "sendMessage?chat_id=" + chat_id +"&text=" + message2
+
+
     if temperature > 30:
-        r = requests.get("https://api.telegram.org/bot5052823122:AAFJcXyyRbGUUHG2sP0lhSvCfCHobVmoGK4/sendMessage?chat_id=-681600803&text=Too+hot")
+        r = requests.get(bot_url1)
     if temperature < 20:
-        r = requests.get("https://api.telegram.org/bot5052823122:AAFJcXyyRbGUUHG2sP0lhSvCfCHobVmoGK4/sendMessage?chat_id=-681600803&text=Too+cold")
+        r = requests.get(bot_url2)
 
     # API key
 
